@@ -7,8 +7,16 @@
     text-shadow: 3px;
    background-color: rgb(96, 130, 18);
    box-shadow: 4;
+   font-size: 50px;
 }
 .hello{
     background-color: yellow;
     height: 650px;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: black;
+    list-style: none;
 }

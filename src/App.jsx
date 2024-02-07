@@ -14,14 +14,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Route>
         {/* <Route path="*" element={<div>Login</div>} /> */}
-        <Route
-          path="*"
-          element={
-            <div>
-              <Error />
-            </div>
-          }
-        />
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );
