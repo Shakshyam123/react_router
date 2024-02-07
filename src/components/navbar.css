@@ -1,0 +1,26 @@
+
+.headnav ul{
+    display: flex;
+    justify-content: start;
+    background-color: rgb(4, 66, 68);
+    height: 80px;
+}
+.headnav ul li{
+    list-style: none;
+    padding-top: 30px;
+}
+.headnav ul li a{
+    text-decoration: none;
+    color: white;
+    margin: 80px;
+    
+    font-size: 20px;
+}
+.headnav ul li a:hover{
+    color: black;
+    background-color: white;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    
+}

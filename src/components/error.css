@@ -1,0 +1,14 @@
+.error{
+    text-align: center;
+    border: 2px solid white;
+ height: 500px;
+    width: 700px;
+    margin-left: 300px;
+    text-shadow: 3px;
+   background-color: rgb(96, 130, 18);
+   box-shadow: 4;
+}
+.hello{
+    background-color: yellow;
+    height: 650px;
+}

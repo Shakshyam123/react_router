@@ -1,0 +1,23 @@
+.ground{
+    background-color: cadetblue;
+    height: 550px;
+    margin-top: 2px;
+    position: relative;
+}
+.color{
+    position: absolute;
+    color: rgb(248, 245, 245);
+    top: 100px;
+    margin-left: 30px;
+    font-size: 50px;
+    font-weight: 600;
+}
+.image{
+    position: absolute;
+height: 400px;
+width: 350px;
+border-radius: 50%;
+left: 800px;
+top: 40px;
+
+}
