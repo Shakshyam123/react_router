@@ -1,0 +1,15 @@
+
+.sidenav ul li {
+    background-color: aquamarine;
+   padding: 40px;
+   width: 50px;
+   list-style: none;
+}
+.sidenav ul li a{
+    text-decoration: none;
+    font-size: 20px;
+}
+.sidenav {
+    height: 100vh;
+    overflow: auto;
+}

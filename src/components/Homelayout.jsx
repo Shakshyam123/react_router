@@ -7,7 +7,7 @@ function Homelayout() {
     <div>
       <Nav />
       <Outlet />
-      <div style={{ marginTop: "50px" }}>
+      <div style={{ marginTop: "0vh" }}>
         <Footer />
       </div>
     </div>

@@ -13,9 +13,7 @@
     background-color: yellow;
     height: 650px;
 }
-a{
-    color: white;
-}
+
 a:hover{
     color: black;
     list-style: none;
