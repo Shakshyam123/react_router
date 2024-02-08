@@ -8,6 +8,16 @@
 .sidenav ul li a{
     text-decoration: none;
     font-size: 20px;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 15px;
+    padding: 12px;
+    font-weight: 500px;
+}
+.sidenav ul li a:hover{
+    color: white;
+    background-color: black;
+    border-radius: 50px ;
 }
 .sidenav {
     height: 100vh;

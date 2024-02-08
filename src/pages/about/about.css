@@ -6,10 +6,11 @@
 
 
 .outlet{
-    background-color: rgb(170, 255, 0);
+    background: url(image2.jpg);
     font-size: 30px;
-    height: 100vh;
+    height: 600px;
     display: flex;
+  
     width: 100%;
     
 }
