@@ -5,13 +5,14 @@ import Homelayout from "./components/HOmelayout";
 import About from "./pages/about/About";
 import Error from "./components/Error";
 import SideNav from "./components/SideNav";
-
+import Blog from "./components/Blog/Blog";
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Homelayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />}>
             <Route path="sidenav" element={<SideNav />} />
           </Route>

@@ -4,12 +4,11 @@ import { Outlet } from "react-router-dom";
 
 function Homelayout() {
   return (
-    <div>
+    <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
       <Nav />
       <Outlet />
-      <div style={{ marginTop: "0vh" }}>
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 }

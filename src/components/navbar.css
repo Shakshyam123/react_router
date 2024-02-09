@@ -11,7 +11,8 @@
 }
 .headnav ul li a{
     text-decoration: none;
-    color: white;
+    color: 
+    white;
     margin: 80px;
     
     font-size: 20px;
@@ -24,3 +25,11 @@
     border-radius: 5px;
     
 }
+.link-active {
+    
+    background: rgb(138, 136, 134);
+    border-radius: 5px;
+    padding: 5px;
+   
+  }
+  

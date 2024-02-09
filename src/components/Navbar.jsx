@@ -6,16 +6,31 @@ function Nav() {
     <nav className="headnav">
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+          >
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/blog">Blog</NavLink>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+          >
+            Blog
+          </NavLink>
         </li>
         <li>
-          <NavLink to="contact">Contact</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </li>
       </ul>
     </nav>

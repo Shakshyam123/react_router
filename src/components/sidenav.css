@@ -1,25 +1,31 @@
-
+*{
+    font-family: cursive;
+}
 .sidenav ul li {
-    background-color: aquamarine;
-   padding: 40px;
+    background-color: rgb(234, 246, 246);
+   padding: 40px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
    width: 50px;
    list-style: none;
 }
 .sidenav ul li a{
     text-decoration: none;
     font-size: 20px;
-    background-color: aliceblue;
+    background-color: rgb(53, 154, 243);
     color: black;
     border-radius: 15px;
     padding: 12px;
     font-weight: 500px;
 }
 .sidenav ul li a:hover{
-    color: white;
-    background-color: black;
+    color: rgb(8, 8, 8);
+    background-color: rgb(249, 247, 247);
     border-radius: 50px ;
 }
 .sidenav {
     height: 100vh;
     overflow: auto;
+}
+.isActive{
+    background: rgb(14, 14, 14);
+    padding: 4px;
 }

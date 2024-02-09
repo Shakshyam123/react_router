@@ -1,11 +1,17 @@
 import { NavLink } from "react-router-dom";
 import "./sidenav.css";
+
 function SideNav() {
   return (
     <div className="sidenav">
       <ul>
         <li>
-          <NavLink to="*">item1</NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+          >
+            item2
+          </NavLink>
         </li>
         <li>
           <NavLink to="/">item2</NavLink>
