@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./pages/home/Home";
 import { Routes, Route } from "react-router-dom";
-import Homelayout from "./components/HOmelayout";
+import Homelayout from "./components/Homelayout";
 import About from "./pages/about/About";
 import Error from "./components/Error";
 import SideNav from "./components/SideNav";
