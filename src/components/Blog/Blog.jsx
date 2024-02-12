@@ -2,60 +2,87 @@ import { useState } from "react";
 import "./blog.css";
 
 function Blog() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("");
-  const [pass, setPass] = useState("");
-  const [conf, setConf] = useState("");
-  const [country, setCountry] = useState("");
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [gender, setGender] = useState("");
+  // const [pass, setPass] = useState("");
+  // const [conf, setConf] = useState("");
+  // const [country, setCountry] = useState("");
 
-  const [nameError, setNameError] = useState("");
-  const [genderError, setGenderError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [countryError, setCountryError] = useState("");
-  const [passError, setPassError] = useState("");
-  const [confError, setConfError] = useState("");
-  function onSubmit() {
-    // console.log(name);
-    // console.log(email);
-    // console.log(gender);
-    // console.log(pass);
-    // console.log(conf);
-    // console.log(cou);
-    if (!name) {
-      setNameError("!please enter your name!");
-    } else {
-      setNameError("");
+  // const [nameError, setNameError] = useState("");
+  // const [genderError, setGenderError] = useState("");
+  // const [emailError, setEmailError] = useState("");
+  // const [countryError, setCountryError] = useState("");
+  // const [passError, setPassError] = useState("");
+  // const [confError, setConfError] = useState("");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    gender: "",
+    email: "",
+    country: "",
+    pass: "",
+    conf: "",
+  });
+  const [formDataError, setFormDataError] = useState({
+    nameError: "",
+    genderError: "",
+    emailError: "",
+    countryError: "",
+    passError: "",
+    confError: "",
+  });
+  console.log(formData);
+
+  function onSubmit(e) {
+    e.preventDefault();
+    setFormDataError({
+      nameError: "",
+      genderError: "",
+      countryError: "",
+      passError: "",
+      confError: "",
+    });
+    if (!formData.name) {
+      setFormDataError((state) => {
+        return { ...state, nameError: "!please enter your name!" };
+      });
     }
-    if (!gender) {
-      setGenderError("!please enter your gender!");
-    } else {
-      setGenderError("");
+
+    if (!formData.gender) {
+      setFormDataError((state) => {
+        return { ...state, genderError: "Please select a gender" };
+      });
     }
-    if (!email) {
-      setEmailError("!please enter your email!");
-    } else {
-      setEmailError("");
+    if (!formData.email) {
+      setFormDataError((state) => {
+        return { ...state, emailError: "!please enter your email!" };
+      });
     }
-    if (!country) {
-      setCountryError("!please select a country!");
-    } else {
-      setCountryError("");
+    if (!formData.country) {
+      setFormDataError((state) => {
+        return { ...state, countryError: "!please select a country!" };
+      });
     }
-    if (!pass) {
-      setPassError("!please enter password!");
-    } else {
-      setPassError("");
+    if (!formData.pass) {
+      setFormDataError((state) => {
+        return { ...state, passError: "!please enter password!" };
+      });
     }
-    if (!conf) {
-      setConfError("!please re-enter your password!");
-    } else {
-      setConfError("");
+    if (!formData.conf) {
+      setFormDataError((state) => {
+        return { ...state, confError: "!please re-enter your password!" };
+      });
+    }
+    if (formData.pass !== formData.conf && formData.conf !== "") {
+      setFormDataError((state) => {
+        return { ...state, confError: "!passwords do not match!" };
+      });
     }
   }
 
   return (
-    <div>
+    <div className="out">
       <h1 className="coc">Fill this form</h1>
       <div className="blog">
         <div className="class">
@@ -64,11 +91,12 @@ function Blog() {
             <input
               type="text"
               placeholder="Name"
+              value={formData.name}
               onChange={(e) => {
-                setName(e.target.value);
+                setFormData({ ...formData, name: e.target.value });
               }}
             />
-            <span className="mistake">{nameError}</span>
+            <span className="mistake">{formDataError.nameError}</span>
 
             <label>Gender:</label>
             <br />
@@ -76,7 +104,9 @@ function Blog() {
               type="radio"
               name="gender"
               value="male"
-              onChange={(e) => setGender(e.target.value)}
+              onChange={(e) =>
+                setFormData({ ...formData, gender: e.target.value })
+              }
             />
 
             <label>male</label>
@@ -84,29 +114,31 @@ function Blog() {
               type="radio"
               name="gender"
               value="female"
-              onChange={(e) => setGender(e.target.value)}
+              onChange={(e) =>
+                setFormData({ ...formData, gender: e.target.value })
+              }
             />
             <label>female</label>
 
             <br />
-            <span className="mistake">{genderError}</span>
+            <span className="mistake">{formDataError.genderError}</span>
 
             <label>Email:</label>
             <input
               type="gmail"
               placeholder="Email"
               onChange={(e) => {
-                setEmail(e.target.value);
+                setFormData({ ...formData, email: e.target.value });
               }}
-              value={email}
+              value={formData.email}
             />
-            <span className="mistake">{emailError}</span>
+            <span className="mistake">{formDataError.emailError}</span>
 
             <select
               onChange={(e) => {
-                setCountry(e.target.value);
+                setFormData({ ...formData, country: e.target.value });
               }}
-              value={country}
+              value={formData.country}
             >
               <option value="">Select...</option>
               <option value="nep">nepal</option>
@@ -114,39 +146,39 @@ function Blog() {
               <option value="ind">india</option>
             </select>
             <br />
-            <span className="mistake">{countryError}</span>
+
+            <span className="mistake">{formDataError.countryError}</span>
 
             <label>Password:</label>
             <input
               type="password"
               placeholder="password"
               onChange={(e) => {
-                setPass(e.target.value);
+                setFormData({ ...formData, pass: e.target.value });
               }}
-              value={pass}
+              value={formData.pass}
             />
+            <span className="mistake">{formDataError.passError}</span>
 
             <br />
-            <span className="mistake">{passError}</span>
 
             <label>Confirm password:</label>
             <input
               type="password"
               placeholder="Confirm password"
               onChange={(e) => {
-                setConf(e.target.value);
+                setFormData({ ...formData, conf: e.target.value });
               }}
-              value={conf}
+              value={formData.conf}
             />
 
-            <br />
-            <span className="mistake">{confError}</span>
+            <span className="mistake">{formDataError.confError}</span>
+
             <button
-              className="button"
               onClick={(e) => {
-                e.preventDefault();
-                onSubmit();
+                onSubmit(e);
               }}
+              className="button"
             >
               submit
             </button>

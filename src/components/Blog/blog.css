@@ -1,15 +1,18 @@
-
+.out{
+     background:url(image10.jpg);
+}
 .blog{
  
      margin-left: 450px;
-     border: 2px solid rgb(221, 210, 210);
+     
      width: 300px;
      height:fit-content;
      padding: 20px;
-     border-radius: 5px;
+     border-radius: 50px;
      font-size: 20px;
-     background-color: white ;
+     background: invisible;
      margin-bottom:20px;
+     color: white;
 }
 .button{
      border: 2px solid grey;
@@ -31,9 +34,11 @@
           border: 2px solid grey;
           border-radius: 5px;
           font-size: 20px;
+          
      }
 .coc{
      text-align: center;
+     color: white;
 }
 .mistake{
      color: red;
