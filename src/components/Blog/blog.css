@@ -1,12 +1,12 @@
-.out{
-     background:url(image10.jpg);
-}
+
 .blog{
  
      margin-left: 450px;
      
      width: 300px;
      height:fit-content;
+     
+     background:url(image10.jpg);
      padding: 20px;
      border-radius: 50px;
      font-size: 20px;

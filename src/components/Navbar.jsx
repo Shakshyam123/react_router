@@ -30,7 +30,12 @@ function Nav() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+          >
+            Contact
+          </NavLink>
         </li>
       </ul>
     </nav>
