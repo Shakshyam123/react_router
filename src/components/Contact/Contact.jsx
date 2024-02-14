@@ -16,64 +16,33 @@ function Form() {
     name: "",
     email: "",
     gender: "",
-    password: "",
-    confirm: "",
+    pass: "",
+    conf: "",
   });
   console.log(formData);
   const [formDataError, setFormDataError] = useState({
     nameError: "",
     genderError: "",
     emailError: "",
-    countryError: "",
     passError: "",
     confError: "",
   });
-  console.log(formData);
 
   function onSubmit(e) {
     e.preventDefault();
     setFormDataError({
-      nameError: "",
-      genderError: "",
-      countryError: "",
-      passError: "",
-      confError: "",
+      nameError: !formData.name ? "!please enter your name!" : "",
+      genderError: !formData.gender ? "Please select a gender" : "",
+      emailError: !formData.email ? "!please enter your email!" : "",
+      passError: !formData.pass ? "!please enter password!" : "",
+      confError: !formData.conf ? "!please re-enter your password!" : "",
     });
-    if (!formData.name) {
-      setFormDataError((state) => {
-        return { ...state, nameError: "!please enter your name!" };
-      });
-    }
 
-    if (!formData.gender) {
-      setFormDataError((state) => {
-        return { ...state, genderError: "Please select a gender" };
-      });
-    }
-    if (!formData.email) {
-      setFormDataError((state) => {
-        return { ...state, emailError: "!please enter your email!" };
-      });
-    }
-    if (!formData.country) {
-      setFormDataError((state) => {
-        return { ...state, countryError: "!please select a country!" };
-      });
-    }
-    if (!formData.pass) {
-      setFormDataError((state) => {
-        return { ...state, passError: "!please enter password!" };
-      });
-    }
-    if (!formData.conf) {
-      setFormDataError((state) => {
-        return { ...state, confError: "!please re-enter your password!" };
-      });
-    }
     if (formData.pass !== formData.conf && formData.conf !== "") {
-      setFormDataError((state) => {
-        return { ...state, confError: "!passwords do not match!" };
-      });
+      setFormDataError((prevState) => ({
+        ...prevState,
+        confError: "!passwords do not match!",
+      }));
     }
   }
 
@@ -135,8 +104,11 @@ function Form() {
                 control={<Radio />}
                 label="Other"
               />
-              <span className="mistake">{formDataError.genderError}</span>
             </RadioGroup>
+            <span className="mistake">{formDataError.genderError}</span>
+          </FormControl>
+
+          <FormControl>
             <TextField
               id="standard-password-input"
               label="Password"
@@ -144,32 +116,29 @@ function Form() {
               autoComplete="current-password"
               variant="standard"
               onChange={(e) => {
-                setFormData({ ...formData, password: e.target.value });
+                setFormData({ ...formData, pass: e.target.value });
               }}
             />
             <span className="mistake">{formDataError.passError}</span>
+
             <TextField
               id="standard-password-input"
               label="ConfirmPassword"
               type="password"
               autoComplete="current-password"
               variant="standard"
-              onClick={(e) => {
+              onChange={(e) => {
                 setFormData({ ...formData, conf: e.target.value });
               }}
             />
             <span className="mistake">{formDataError.confError}</span>
-            <Stack spacing={2} direction="row">
-              <Button
-                variant="contained"
-                onClick={(e) => {
-                  onSubmit(e);
-                }}
-              >
-                submit
-              </Button>
-            </Stack>
           </FormControl>
+
+          <Stack spacing={100} direction="row">
+            <Button variant="contained" onClick={(e) => onSubmit(e)}>
+              submit
+            </Button>
+          </Stack>
         </div>
       </div>
     </Box>

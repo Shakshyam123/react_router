@@ -1,11 +1,11 @@
-import Nav from "./Navbar";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 
 function Homelayout() {
   return (
     <div style={{ height: "100px", display: "flex", flexDirection: "column" }}>
-      <Nav />
+      <Navbar />
       <Outlet />
 
       <Footer />
